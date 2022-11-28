@@ -7,7 +7,11 @@
   "scripts": {
     "serve": "live-server public/",
     "build": "webpack",
-    "dev-server": "webpack-dev-server"
+	"build:dev": "webpack",
+    "build:prod": "webpack --env production",
+    "dev-server": "webpack-dev-server",
+	"start": "node server/server.js",
+	"heroku-postbuild": "yarn run build:prod"
   },
   "dependencies": {
     "@babel/core": "^7.19.1",
@@ -17,6 +21,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^6.7.1",
+    "express": "^4.18.2",
     "live-server": "^1.2.2",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
